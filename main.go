@@ -73,7 +73,7 @@ func main() {
 		}()
 	}
 
-	workersBlocker := make(chan struct{})
+	workersBlocker := make(chan int)
 	go func() {
 		workersWaitGroup.Wait()
 		close(workersBlocker)
